@@ -33,6 +33,15 @@ export function ProjectsSection() {
       demo: "#",
     },
     {
+      title: "E-Commerce Platform",
+      description:
+        "Full-stack e-commerce solution with React, Node.js, and Stripe integration",
+      image: "/modern-ecommerce-dashboard.png",
+      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      github: "#",
+      demo: "#",
+    },
+    {
       title: "AI Chat Interface",
       description:
         "Modern chat interface with AI integration and real-time messaging",

@@ -18,8 +18,8 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "a.charkawi@holdco.co",
-      href: "mailto:a.charkawi@holdco.co",
+      value: "aboudecharkawi@gmail.com",
+      href: "mailto:aboudecharkawi@gmail.com",
     },
     {
       icon: Phone,
@@ -36,8 +36,12 @@ export function ContactSection() {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/abdulaziz79", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/abdelaziz-cherkawi-248233270",
+      label: "LinkedIn",
+    },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
