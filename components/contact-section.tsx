@@ -13,14 +13,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
 
 export function ContactSection() {
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs
       .sendForm(
@@ -31,10 +33,17 @@ export function ContactSection() {
       )
       .then(
         (result) => {
-          toast.success("Message sent successfully!");
+          toast.success("Message sent successfully!", {
+            className: "max-w-md h-20 text-center",
+          });
+          formRef.current?.reset();
+          setLoading(false);
         },
         (error) => {
-          toast.error("Error sending message.");
+          toast.error("Error sending message.", {
+            className: "max-w-md h-20 text-center",
+          });
+          setLoading(false);
         }
       );
   };
@@ -124,6 +133,7 @@ export function ContactSection() {
                   <Button
                     type="submit"
                     className="w-full bg-primary hover:bg-primary/90 cursor-pointer"
+                    disabled={loading}
                   >
                     Send Message
                   </Button>
