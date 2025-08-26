@@ -104,14 +104,17 @@ export function HeroSection() {
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary/20 hover:bg-primary/5 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-transparent"
-            >
-              <Download className="mr-2 h-5 w-5" />
-              Download CV
-            </Button>
+
+            <a href="/abdelaziz.pdf" download="Abdelaziz-CV.pdf">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-primary/20 hover:bg-primary/5 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-transparent cursor-pointer"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
 
