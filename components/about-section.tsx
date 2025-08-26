@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card } from "@/components/ui/card"
-import { Code, Palette, Zap } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Code, Palette, Zap } from "lucide-react";
 
 export function AboutSection() {
   const features = [
@@ -21,7 +21,7 @@ export function AboutSection() {
       title: "Performance",
       description: "Optimizing for speed and exceptional user experience",
     },
-  ]
+  ];
 
   return (
     <section id="about" className="py-20 bg-muted/30">
@@ -33,10 +33,13 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk mb-4">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk mb-4">
+            About Me
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm a passionate full stack developer with 5+ years of experience building modern web applications. I love
-            turning complex problems into simple, beautiful solutions.
+            I'm a passionate full stack developer with 3+ years of experience
+            building modern web applications. I love turning complex problems
+            into simple, beautiful solutions.
           </p>
         </motion.div>
 
@@ -61,5 +64,5 @@ export function AboutSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

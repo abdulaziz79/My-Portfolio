@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   Card,
   CardContent,
@@ -12,8 +13,32 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { useRef } from "react";
+import { toast } from "sonner";
 
 export function ContactSection() {
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_50ahxjj",
+        "template_1o9idfg",
+        formRef.current!,
+        "cDnxYJqibJr25A3rr"
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully!");
+        },
+        (error) => {
+          toast.error("Error sending message.");
+        }
+      );
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -25,7 +50,7 @@ export function ContactSection() {
       icon: Phone,
       label: "Phone",
       value: "+961 79 165 588",
-      href: "tel:+96179 165 588",
+      href: "tel:+96179165588",
     },
     {
       icon: MapPin,
@@ -36,12 +61,8 @@ export function ContactSection() {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/abdulaziz79", label: "GitHub" },
-    {
-      icon: Linkedin,
-      href: "https://www.linkedin.com/in/abdelaziz-cherkawi-248233270",
-      label: "LinkedIn",
-    },
+    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
@@ -65,6 +86,7 @@ export function ContactSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Left side - form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -81,20 +103,36 @@ export function ContactSection() {
                   possible.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="Your Name" />
-                  <Input placeholder="Your Email" type="email" />
-                </div>
-                <Input placeholder="Subject" />
-                <Textarea placeholder="Your Message" rows={5} />
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  Send Message
-                </Button>
+              <CardContent>
+                <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <Input placeholder="Your Name" name="from_name" required />
+                    <Input
+                      placeholder="Your Email"
+                      type="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <Input placeholder="Subject" name="subject" required />
+                  <Textarea
+                    placeholder="Your Message"
+                    rows={5}
+                    name="message"
+                    required
+                  />
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 cursor-pointer"
+                  >
+                    Send Message
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </motion.div>
 
+          {/* Right side - info */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
