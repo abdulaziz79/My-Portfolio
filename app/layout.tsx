@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Portfolio - Full Stack Developer",
   description:
     "Modern futuristic portfolio showcasing full stack development skills",
-  generator: "v0.app",
+  generator: "portfolio.app",
 };
 
 export default function RootLayout({
