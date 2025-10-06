@@ -22,7 +22,7 @@ export function ProjectsSection() {
       tech: ["Next.js", "TypeScript", "Prisma", "Supabase"],
       github: "#",
       status: "Testing",
-      demo: "https://portfolios-smoky-iota.vercel.app/",
+      demo: "https://portfolios-i8yv-jv41phz11-abdulaziz79s-projects.vercel.app/",
     },
     {
       title: "Takyeem",
