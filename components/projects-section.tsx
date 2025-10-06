@@ -15,6 +15,16 @@ import Image from "next/image";
 export function ProjectsSection() {
   const projects = [
     {
+      title: "Oryon",
+      description:
+        "A versatile web platform enabling users to quickly create and customize professional portfolios. The system also extends to restaurant websites with menu management and includes a resume builder for individuals. Designed to be user-friendly with minimal steps, ensuring accessibility for a broad audience",
+      image: "/portfolio.png",
+      tech: ["Next.js", "TypeScript", "Prisma", "Supabase"],
+      github: "#",
+      status: "Testing",
+      demo: "https://portfolios-i8yv.vercel.app/",
+    },
+    {
       title: "Takyeem",
       description:
         "A SaaS platform for managing assessments with multi-role access. Features include assessment builder, live assessments, integrations, chatbot support, automated reporting, and more. Currently collaborating on development while preparing to take on project management responsibilities as the platform nears launch.",
@@ -155,11 +165,16 @@ export function ProjectsSection() {
                       <Button
                         size="sm"
                         className="w-full cursor-pointer"
-                        disabled={project.status !== "Launched"}
+                        disabled={
+                          project.status !== "Launched" &&
+                          project.status !== "Testing"
+                        }
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         {project.status === "Launched"
                           ? "Demo"
+                          : project.status === "Testing"
+                          ? "Testing"
                           : "To be launched soon"}
                       </Button>
                     </a>

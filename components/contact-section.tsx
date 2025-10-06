@@ -70,8 +70,12 @@ export function ContactSection() {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/abdulaziz79", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/abdelaziz-cherkawi-248233270/",
+      label: "LinkedIn",
+    },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
 

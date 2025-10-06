@@ -105,7 +105,7 @@ export function HeroSection() {
               Get In Touch
             </Button>
 
-            <a href="/abdelaziz1.pdf" download="Abdelaziz-CV.pdf">
+            <a href="/mycv.pdf" download="Abdelaziz-CV.pdf">
               <Button
                 variant="outline"
                 size="lg"
