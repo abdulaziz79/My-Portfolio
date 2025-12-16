@@ -15,7 +15,7 @@ import Image from "next/image";
 export function ProjectsSection() {
   const projects = [
     {
-      title: "Oryon",
+      title: "VizualMe",
       description:
         "A versatile web platform enabling users to quickly create and customize professional portfolios. The system also extends to restaurant websites with menu management and includes a resume builder for individuals. Designed to be user-friendly with minimal steps, ensuring accessibility for a broad audience",
       image: "/portfolio.png",
