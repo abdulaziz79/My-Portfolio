@@ -29,7 +29,7 @@ export function ContactSection() {
         "service_50ahxjj",
         "template_1o9idfg",
         formRef.current!,
-        "cDnxYJqibJr25A3rr"
+        "cDnxYJqibJr25A3rr",
       )
       .then(
         (result) => {
@@ -44,7 +44,7 @@ export function ContactSection() {
             className: "max-w-md h-20 text-center",
           });
           setLoading(false);
-        }
+        },
       );
   };
 
@@ -71,11 +71,11 @@ export function ContactSection() {
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/abdulaziz79", label: "GitHub" },
-    {
-      icon: Linkedin,
-      href: "https://www.linkedin.com/in/abdelaziz-cherkawi-248233270/",
-      label: "LinkedIn",
-    },
+    // {
+    //   icon: Linkedin,
+    //   href: "https://www.linkedin.com/in/abdelaziz-cherkawi-248233270/",
+    //   label: "LinkedIn",
+    // },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
 
