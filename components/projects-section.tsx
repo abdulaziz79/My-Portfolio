@@ -15,13 +15,23 @@ import Image from "next/image";
 export function ProjectsSection() {
   const projects = [
     {
+      title: "Najdah",
+      description:
+        "A community-driven crisis response platform designed to connect people who need help with those who can offer it. The system enables users to post urgent needs or offers, create fundraisers, and discover nearby support through an interactive map. Built to be accessible in English and Arabic (RTL) and optimized as a Progressive Web App, ensuring usability across devices and even in low-connectivity environments.",
+      image: "/najdah.png",
+      tech: ["Next.js", "TypeScript", "Prisma", "Supabase"],
+      github: "#",
+      status: "Launched",
+      demo: "https://najdah.online",
+    },
+    {
       title: "VizualMe",
       description:
         "A versatile web platform enabling users to quickly create and customize professional portfolios. The system also extends to restaurant websites with menu management and includes a resume builder for individuals. Designed to be user-friendly with minimal steps, ensuring accessibility for a broad audience",
-      image: "/portfolio.png",
+      image: "/portfolio2.png",
       tech: ["Next.js", "TypeScript", "Prisma", "Supabase"],
       github: "#",
-      status: "Testing",
+      status: "Launched",
       demo: "https://vizualme.com",
     },
     {
@@ -174,8 +184,8 @@ export function ProjectsSection() {
                         {project.status === "Launched"
                           ? "Demo"
                           : project.status === "Testing"
-                          ? "Testing"
-                          : "To be launched soon"}
+                            ? "Testing"
+                            : "To be launched soon"}
                       </Button>
                     </a>
                   </div>
